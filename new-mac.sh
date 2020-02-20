@@ -100,6 +100,7 @@ brew cask install istat-menus
 brew cask install macpass
 brew cask install the-unarchiver
 brew cask install adobe-acrobat-reader
+brew cask install IINA
 
 
 # ZSH replacing shell.
