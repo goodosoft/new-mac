@@ -67,6 +67,9 @@ brew cask install postman
 brew cask install datagrip
 
 #DB
+brew tap InstantClientTap/instantclient
+brew install instantclient-basic
+brew install instantclient-sqlplus
 brew install mysql
 brew install postgres
 
