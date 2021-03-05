@@ -1,41 +1,8 @@
-# Get Sudo.
-if [ $EUID != 0 ]; then
-    sudo "$0" "$@"
-    exit $?
-fi
-
-# Install Xcode first - https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12
-# Install Xcode command line tools.
-xcode-select --install
-
-# Install Homebrew.
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-# Configure Homebrew.
-brew doctor
-
-# Setup Homebrew Cask.
-brew install brew-cask
-brew tap adoptopenjdk/openjdk
-brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
-
-
-# Nicer plugins for QuickLook.
-brew cask install qlcolorcode
-brew cask install qlstephen
-brew cask install qlmarkdown
-brew cask install quicklook-json
-brew cask install webpquicklook
-brew cask install qlimagesize
-brew cask install qlprettypatch 
-brew cask install quicklook-csv 
-brew cask install betterzipql 
-brew cask install suspicious-package
-
-# Virtualization
-brew install docker
+# Update Homebrew.
+brew update && brew upgrade && brew cleanup 
 
 # System Tools
+brew tap adoptopenjdk/openjdk
 brew install git
 brew install vim
 brew install vimpager
@@ -43,67 +10,64 @@ brew install wget
 brew install htop
 brew install openssh
 brew install ssh-copy-id
-brew install python
+brew install python@3.8
+brew install --cask adoptopenjdk8
+brew install --cask adoptopenjdk11
 
 
 # Apps.
 
 
 # Apps - Browsers
-brew cask install google-chrome
-brew cask install firefox
+brew install --cask google-chrome
+brew install --cask firefox
 
 # Apps - Text editor
-brew cask install sublime-text3
+brew install --cask sublime-text
 
 # Apps - IDEs
-brew cask install pycharm
-brew cask install adoptopenjdk8
-brew cask install intellij-idea
-brew cask install visual-studio-code
-brew cask install postman
+brew install --cask pycharm
+brew install --cask intellij-idea
+brew install --cask visual-studio-code
+brew install --cask postman
 
 # Apps - DB Management
-brew cask install datagrip
+brew install --cask datagrip
 
 #DB
-brew tap InstantClientTap/instantclient
-brew install instantclient-basic
-brew install instantclient-sqlplus
-brew install mysql
-brew install postgres
+# brew tap InstantClientTap/instantclient
+# brew install instantclient-basic
+# brew install instantclient-sqlplus
+# brew install mysql
+# brew install postgres
 
 # Service tools
-brew cask install shuttle
-brew cask install dockertoolbox
+brew install --cask shuttle
 brew install awscli
+brew install kubernetes-cli
 
 
 # Apps - Files
-brew cask install google-backup-and-sync
+brew install --cask google-backup-and-sync
 
 
 # Apps - Communication
-brew cask install qq
-brew cask install wechat
-brew cask install v2rayu
-brew cask install telegram
-brew cask install welly
+# brew install --cask clash-for-windows
+brew install --cask wechat
+brew install --cask telegram
+brew install --cask welly
 
 
 # Apps - Remote
-brew cask install teamviewer
-brew cask install remote-desktop-connection
-brew cask install remote-desktop-manager
+# brew install --cask remote-desktop-manager
 
 
 # System Efficiency
-brew cask install iterm2
-brew cask install istat-menus
-brew cask install macpass
-brew cask install the-unarchiver
-brew cask install adobe-acrobat-reader
-brew cask install IINA
+brew install --cask iterm2
+brew install --cask keepassxc
+brew install --cask the-unarchiver
+brew install --cask adobe-acrobat-reader
+brew install --cask IINA
 
 
 # ZSH replacing shell.
@@ -111,7 +75,7 @@ brew install zsh
 curl -L http://install.ohmyz.sh | sh
 
 # All done with Homebrew.
-brew update && brew upgrade && brew cleanup && brew cask cleanup
+brew update && brew upgrade && brew cleanup
 
 # Done.
 echo "All Done."
