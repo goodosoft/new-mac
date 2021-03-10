@@ -64,7 +64,7 @@ brew install --cask welly
 
 # System Efficiency
 brew install --cask iterm2
-brew install --cask keepassxc
+brew install --cask macpass
 brew install --cask the-unarchiver
 brew install --cask adobe-acrobat-reader
 brew install --cask IINA
